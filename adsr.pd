@@ -1,0 +1,28 @@
+#N canvas 390 266 450 300 10;
+#X obj 65 48 inlet;
+#X obj 105 48 inlet;
+#X obj 145 48 inlet;
+#X obj 145 69 unpack f f f f f;
+#X obj 145 153 vline~;
+#X text 42 14 attack time \, peak amp \, decay time \, sus amp \, release
+time;
+#X obj 145 111 list store;
+#X obj 145 174 outlet~;
+#X obj 145 90 pack f f f f;
+#X obj 255 111 f;
+#X msg 255 132 0 \$1;
+#X msg 145 132 \$2 \$1 \, \$4 \$3 \$1;
+#X connect 0 0 6 0;
+#X connect 1 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;
+#X connect 3 2 8 2;
+#X connect 3 3 8 3;
+#X connect 3 4 9 1;
+#X connect 4 0 7 0;
+#X connect 6 0 11 0;
+#X connect 8 0 6 1;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
